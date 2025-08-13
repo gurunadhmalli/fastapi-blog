@@ -14,7 +14,8 @@ from sqlalchemy.orm import Session
 from blog import models, schemas, database, token
 from blog.hashing import Hash
 
-router = APIRouter()
+router = APIRouter(tags=["login"])
+
 
 @router.post("/login", response_model=schemas.Token)
 def login(
