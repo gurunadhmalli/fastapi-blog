@@ -5,8 +5,8 @@ from sqlalchemy.orm import Session
 from blog.hashing import Hash
 from blog.repository import user
 
-from .. import schemas, models
-from ..database import get_db
+from blog import schemas, models
+from blog.database import get_db
     
 
 router = APIRouter(

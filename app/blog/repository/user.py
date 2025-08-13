@@ -1,9 +1,9 @@
 from fastapi import HTTPException,status
 from sqlalchemy.orm import Session
 
-from ..repository import user
-from ..import models,schemas
-from ..hashing import Hash
+from blog.repository import user
+from blog import models,schemas
+from blog.hashing import Hash
 
 def create(request:schemas.User,db:Session):
     hashed_password = Hash.bcrypt(request.password)

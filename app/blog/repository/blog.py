@@ -2,7 +2,7 @@ from fastapi import HTTPException,status
 from sqlalchemy.orm import Session,joinedload
 
 from blog.routers import blog
-from ..import models,schemas
+from blog import models,schemas
 
 def get_all(db: Session):
     blogs = db.query(models.Blog).options(joinedload(models.Blog.creator)).all()
